@@ -1,12 +1,13 @@
 {
     "name": "sophia",
-    "clients": [],
-    "modelProvider": "gaianet",
+    "clients": ["telegram"],
+    "modelProvider": "anthropic",
     "settings": {
         "secrets": {},
         "voice": {
-            "model": "en_US-male-medium"
-        }
+            "model": "en_US-female-medium"
+        },
+        "model": "small"
     },
     "plugins": [],
     "bio": [
