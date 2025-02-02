@@ -15,7 +15,6 @@ export default defineConfig({
         "https",
         "http",
         "agentkeepalive",
-        "viem",
-        "@lifi/sdk",
+        // Add other modules you want to externalize
     ],
 });

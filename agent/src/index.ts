@@ -44,7 +44,6 @@ import {
 } from "@elizaos/plugin-coinbase";
 import { confluxPlugin } from "@elizaos/plugin-conflux";
 import { evmPlugin } from "@elizaos/plugin-evm";
-import { storyPlugin } from "@elizaos/plugin-story";
 import { flowPlugin } from "@elizaos/plugin-flow";
 import { fuelPlugin } from "@elizaos/plugin-fuel";
 import { imageGenerationPlugin } from "@elizaos/plugin-image-generation";
@@ -67,6 +66,7 @@ import path from "path";
 import { fileURLToPath } from "url";
 import yargs from "yargs";
 import net from "net";
+import { ethereumWalletAction } from "../myAction";
 
 const __filename = fileURLToPath(import.meta.url); // get the resolved path to the file
 const __dirname = path.dirname(__filename); // get the name of the directory
@@ -595,14 +595,13 @@ export async function createAgent(
                 : null,
             getSecret(character, "TON_PRIVATE_KEY") ? tonPlugin : null,
             getSecret(character, "SUI_PRIVATE_KEY") ? suiPlugin : null,
-            getSecret(character, "STORY_PRIVATE_KEY") ? storyPlugin : null,
             getSecret(character, "FUEL_PRIVATE_KEY") ? fuelPlugin : null,
             getSecret(character, "AVALANCHE_PRIVATE_KEY")
                 ? avalanchePlugin
                 : null,
         ].filter(Boolean),
         providers: [],
-        actions: [],
+        actions: [ethereumWalletAction],
         services: [],
         managers: [],
         cacheManager: cache,
