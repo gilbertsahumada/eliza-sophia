@@ -1,4 +1,4 @@
-*.ts
+!myAction.ts
 !index.ts
 !character.ts
 .env
